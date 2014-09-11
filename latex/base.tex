@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper,twoside]{book}
+
+\usepackage{etoolbox} % required by \iftoggle
+\usepackage[utf8]{inputenc}
+%% \usepackage{fullpage}                          % Widen page margin
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{makecell}
+\usepackage{lipsum}
+
+\usepackage{ccicons}
+
+\usepackage[colorlinks,linktoc=all]{hyperref}              % Color links
+\usepackage[printonlyused,withpage]{acronym}   % Acronyms
+\usepackage[usenames,dvipsnames]{color} % named colors such as CadetBlue
+\usepackage{listings}   % Code synthax highlighting package (\lstinputlisting)
+\usepackage{lstlang1}                          % C++ settings
+\usepackage{courier}
+%
+\usepackage[colorinlistoftodos, textwidth=4cm, shadow]{todonotes} % Todo notes
+%\usepackage[displaymath, tightpage]{preview}
+\usepackage{makeidx} % \printindex
+
+%%%%%%%%% Hyper-Links Configuration %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=Orchid,urlcolor=CadetBlue}
+%%%%%%%%% Programming Language Toggles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtoggle{cpp}
+\newtoggle{java}
+\newtoggle{scala}
+
+%% Define toggle for the programming language
+\toggletrue{cpp}
+\togglefalse{java}
+\togglefalse{scala}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{The Data Distribution Service Tutorial}
+\author{
+	Angelo Corsaro\\ 
+	Chief Technology Officer\\
+	PrismTech \\
+	\href{mailto:angelo.corsaro@prismtech.com}{angelo.corsaro@prismtech.com}
+} 
+
+
+\date{}
+\begin{document}
+	\maketitle
+	\thispagestyle{empty}
+	\input{copyright}
+	\pagestyle{headings}
+	\setcounter{page}{1}
+	\pagenumbering{roman}
+	\tableofcontents
+	\setcounter{page}{1}
+	\pagenumbering{arabic}
+	\input{ch1}
+	\mainmatter
+	\input{ch2}
+	\input{ch3}
+	\input{ch4}
+	\appendix
+	\input{appendixA}
+	\backmatter
+	\input{ac2ronyms}
+%%%
+%%% Index
+%%%
+	\printindex
+%%%
+%%% Bibliography
+%%%
+	\bibliography{biblio}{ }
+	\bibliographystyle{plain}
+	
+\end{document}
